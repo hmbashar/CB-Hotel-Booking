@@ -1,0 +1,143 @@
+form.fbqs {
+  width: 400px;
+  margin: 40px auto;
+  padding: 40px;
+  background: #f5f5f5;
+}
+form.fbqs .field {
+  margin-bottom: 5px;
+  display: block;
+}
+form.fbqs .field:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+form.fbqs .field label {
+  line-height: 30px;
+  display: inline-block;
+}
+form.fbqs .field input[type="text"],
+form.fbqs .field select {
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #ddd;
+}
+form.fbqs .field.dates select {
+  width: 30%;
+  margin-right: 4%;
+  text-indent: 5px;
+}
+form.fbqs .field.dates select:last-child {
+  float: right;
+  margin-right: 0;
+}
+form.fbqs .field:not(.dates) label {
+  padding-right: 10px;
+}
+form.fbqs .field:not(.dates) label,
+form.fbqs .field:not(.dates) select,
+form.fbqs .field:not(.dates) input[type="text"] {
+  width: 50%;
+  float: left;
+}
+form.fbqs .field:not(.dates) select,
+form.fbqs .field:not(.dates) input[type="text"] {
+  text-align: right;
+  padding-right: 20px;
+}
+form.fbqs input.submit {
+  display: inline-block;
+  background: #091e3b;
+  color: #fff;
+  border: none;
+  margin-top: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+}
+form.fbqs a.cancel {
+  text-align: center;
+  display: block;
+}
+
+/*# sourceMappingURL=form.css.map */
+
+/* Form Control */
+.form-control {
+  display: block;
+  overflow-x: scroll;
+  padding: 20px 0;
+  margin: 30px 0;
+  background: #ffffff;
+  border-top: 2px solid #444c6180;
+  border-left: 2px solid #444c6180;
+  border-right: 2px solid #444c6180;
+  border-radius: 10px;
+  /* box-shadow: 0px 4px 30px 0px rgba(14, 19.000000000000007, 22, 0.1); */
+}
+.form-control .form-container {
+  display: flex;
+  align-items: flex-end;
+}
+.form-container .input-fill {
+  padding: 0 15px;
+  flex: 0 0 40%;
+  max-width: 40%;
+}
+
+.form-control .form-container label {
+  font-weight: 600;
+  color: #432975;
+  margin: 0px 0px 0px 0px;
+  font-size: 16px;
+}
+.form-control .form-container input {
+  outline: none;
+  min-height: 43px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  border: 1px solid #e0e1e3;
+  background-color: #fff;
+  border-style: solid;
+  border-width: 0px 0px 1px 0px;
+  border-color: #444c6180;
+  color: #444c6180;
+  padding: 0px 0px 0px 0px;
+  padding: 15px 0;
+}
+
+.form-control .form-container select {
+  outline: none;
+  min-height: 43px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  border: 1px solid #e0e1e3;
+  background-color: #fff;
+  border-style: solid;
+  border-width: 0px 0px 1px 0px;
+  border-color: #444c6180;
+  color: #444c6180;
+  padding: 0px 0px 0px 0px;
+  padding: 15px 0;
+}
+.form-control .form-container .search-button {
+  background-color: #4f367e;
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  border-color: #4f367e;
+  font-size: 18px;
+  color: #ffffff;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.form-control .form-container .search-button:hover {
+  background-color: #0e1316;
+}
