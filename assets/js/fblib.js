@@ -35,7 +35,7 @@ function hhotelProfil(code_interface, profil)
 // Form: show arrival date
 // this function to replace the traditional start function
 // in this case no update is required every year.
-function start() {
+function CBHotelStart() {
     var nbm = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
 
     thisform = document.idForm;
