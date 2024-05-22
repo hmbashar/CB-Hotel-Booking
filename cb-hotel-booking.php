@@ -10,6 +10,44 @@ Author: Md Abul Bashar
 Author URI: http://hmbashar.com
 */
 
+
+// Define plugin version, directory path, and URL
+define('CBHOTEL_VERSION', 1.0);
+define('CBHOTEL_PLUGIN_DIR', plugin_dir_path(__FILE__));
+define('CBHOTEL_PLUGIN_URL', plugin_dir_url(__FILE__));
+define('CBHOTEL_ASSETS', CBHOTEL_PLUGIN_URL . 'assets');
+
+
+function cb_hotel_booking_styles() {   
+    wp_enqueue_style('cb-docs', CBHOTEL_ASSETS . '/css/docs.css');
+    wp_enqueue_style('cbhotel-form', CBHOTEL_ASSETS . '/css/form.css');
+    wp_enqueue_style('cbhotel-main', CBHOTEL_ASSETS . '/css/style.css');
+}
+add_action('wp_enqueue_scripts', 'cb_hotel_booking_styles');
+
+function cb_hotel_booking_scripts() {
+    wp_enqueue_script('cb-fblib', CBHOTEL_ASSETS . '/js/fblib.js', array('jquery'));
+    wp_enqueue_script('cb-fbparam', CBHOTEL_ASSETS . '/js/fbparam.js', array('jquery'));
+}
+add_action('wp_enqueue_scripts', 'cb_hotel_booking_scripts');
+
+function cb_hotel_booking_shortcode($atts) {
+    $a = shortcode_atts(array(
+        'showPromotions' => '1',
+        'Hotelnames' => 'ITITMHTLRoyalGardenH',
+        'Clusternames' => 'ITITMHTLRoyalGardenH'
+    ));
+    $out = '<form action="https://redirect.fastbooking.com/DIRECTORY/dispoprice.phtml" method="get">';
+    $out .= '<input type="hidden" name="showPromotions" value="' . esc_attr($a['showPromotions']) . '" />';
+    $out .= '<input type="hidden" name="Hotelnames" value="' . esc_attr($a['Hotelnames']) . '" />';
+    $out .= '<input type="hidden" name="Clusternames" value="' . esc_attr($a['Clusternames']) . '" />';
+    $out .= '<input type="submit" value="Book Now" />';
+    $out .= '</form>';
+    return $out;
+}
+add_shortcode('hotel_booking', 'cb_hotel_booking_shortcode');
+
+
 ?>
 <body onload="start()">
 
