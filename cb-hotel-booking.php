@@ -9,6 +9,7 @@ Description: CB Hotel Booking
 Version: 1.0
 Author: Md Abul Bashar
 Author URI: http://hmbashar.com
+textdomain: cb-hotel-booking
 */
 
 
@@ -18,6 +19,12 @@ define('CBHOTEL_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('CBHOTEL_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('CBHOTEL_ASSETS', CBHOTEL_PLUGIN_URL . 'assets');
 
+
+function cb_hotel_booking_set_locale()
+{
+    load_plugin_textdomain( 'cb-hotel-booking', plugin_dir_path(__FILE__) . 'languages/' );
+}
+add_action( 'plugins_loaded', 'cb_hotel_booking_set_locale' );
 
 function cb_hotel_booking_styles()
 {
@@ -35,12 +42,26 @@ function cb_hotel_booking_scripts()
 }
 add_action('wp_enqueue_scripts', 'cb_hotel_booking_scripts');
 
+
+
+function cb_hotel_elementor_addon() {
+
+	// Load plugin file
+	require_once( __DIR__ . '/includes/plugin.php' );
+
+	// Run the plugin
+	\CBHOTELBooking\CBHotelConfiguration::instance();
+
+}
+add_action( 'plugins_loaded', 'cb_hotel_elementor_addon' );
+
+
 function cb_hotel_booking_shortcode()
 {
     ob_start(); // Start output buffering
     ?>
 
-    <div id="preview" onload="CBHotelStart();">
+    <div id="cbhotel-booking-form" onload="CBHotelStardt();">
 
         <div class="form-control">
             <form action="#" class="form-container">
